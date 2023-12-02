@@ -1,0 +1,169 @@
+<header class="topbar" style="background-color: #ededed;">
+  <nav class="navbar top-navbar navbar-expand-md ">
+      <!-- ============================================================== -->
+      <!-- Logo -->
+      <!-- ============================================================== -->
+      <div class="navbar-header bg-light">
+        <a class="navbar-brand" routerLink="dashboard">
+            <!-- Logo icon --><b>
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                <!-- <img src="assets/images/favicon.png" alt="homepage" class="dark-logo" /> -->
+                <!-- Light Logo icon -->
+                <!-- <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" /> -->
+            </b>
+            <!--End Logo icon -->
+            <!-- Logo text --><span class="logo-text" *ngIf="area">
+             <!-- dark Logo text -->
+             <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
+             {{ area.nombre }}
+             <!-- Light Logo text -->    
+            </span> </a>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Logo -->
+      <!-- ============================================================== -->
+      <div class="navbar-collapse">
+          <!-- ============================================================== -->
+          <!-- toggle and nav items -->
+          <!-- ============================================================== -->
+          <ul class="navbar-nav mr-auto ">
+            
+              <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa-solid fa-bars"></i></a> </li>
+              <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa-solid fa-bars text-dark"></i></a> </li>
+              <li class="nav-item hidden-sm-down"></li>
+
+              <!-- <li class="nav-item d-flex align-items-center" >
+                  
+
+                  <div class="">
+     
+
+                    <div class="d-flex align-items-center ml-3">
+
+                        <input readonly  class="form-control form-input-date w-50" [matDatepicker]="dp" [formControl]="date">
+          
+                        <div>
+
+                        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+                        <mat-datepicker #dp
+                                        startView="year"
+                                        (monthSelected)="setMonthAndYear($event, dp)"
+                                        panelClass="example-month-picker">
+                        </mat-datepicker>
+
+                        </div>
+
+                    </div>
+                  </div>
+             
+          
+              </li> -->
+
+              <li class="nav-item d-flex align-items-center">
+
+                <div class="company-section">
+                     <span class="company-name" ></span>
+                    
+                         <span class="company-name ml-3"></span>
+                     
+                </div>
+
+            </li>
+
+              
+            
+
+            
+          </ul>
+          <!-- ============================================================== -->
+          <!-- User profile and search -->
+          <!-- ============================================================== -->
+      
+          <ul class="navbar-nav my-lg-0">
+
+            <li class="nav-item ml-3">
+              <button class="mt-1 d-flex align-items-center" mat-button [matMenuTriggerFor]="beforeMenu"> 
+                <mat-icon>person</mat-icon>  
+                <span class="role">  </span>
+
+              </button>
+              <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <a  routerLink="/modulos" class="btn btn-light" mat-menu-item  > <mat-icon class="mat-icon-header">undo</mat-icon>  <span class="text-button-icon">Cambiar</span> </a> 
+                <button  type="button" mat-menu-item  (click)="logout()" > <mat-icon class="mat-icon-header">logout</mat-icon> <span class="text-button-icon">Salir</span> </button>
+            
+              </mat-menu> 
+            </li>
+ 
+        </ul>
+
+      </div>
+  </nav>
+</header>
+
+
+
+<aside class="left-sidebar">
+  <!-- Sidebar scroll-->
+  <div class="scroll-sidebar">
+      <!-- Sidebar navigation-->
+      <nav class="sidebar-nav">
+          <ul id="sidebarnav">
+
+     
+
+              <li class="nav-devider"></li>
+          
+          
+              <li  > <a routerLink="tramite" routerLinkActive="active" aria-expanded="false"><i class="icon-fa fa-solid fa-desktop"></i><span class="hide-menu">Tramite</span></a>
+             
+       
+
+          </ul>
+      </nav>
+      <!-- End Sidebar navigation -->
+  </div>
+  <!-- End Sidebar scroll-->
+</aside>
+
+
+<div class="page-wrapper" style="min-height: 938px;">
+
+  <!-- ============================================================== -->
+  <!-- Container fluid  -->
+  <!-- ============================================================== -->
+
+
+        <!-- <app-breadcrumbs></app-breadcrumbs> -->
+
+      
+        <div class="container-fluid">
+
+          <router-outlet></router-outlet>
+
+        </div>
+
+
+        
+
+
+  
+    <!-- ============================================================== -->
+       <!-- End Container fluid  -->
+       <!-- ============================================================== -->
+       <!-- ============================================================== -->
+       <!-- footer -->
+       <!-- ============================================================== -->
+     <footer class="footer">
+
+     </footer>
+     <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+
+
+
+</div>  
+
+
+

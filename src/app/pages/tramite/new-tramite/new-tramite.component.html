@@ -1,0 +1,85 @@
+
+<h2  >Nuevo Tramite </h2>
+
+<form [formGroup]="form" (ngSubmit)="guardar()"> 
+
+    <div class="row">
+
+        <div class="col-md-3" >
+
+            <div class="d-flex">
+                <mat-form-field class="w-100">
+                    <mat-label style="color:#000;" class="font-weighr-bold">DNI/RUC</mat-label>
+                    <input autocomplete="off" formControlName="dni" (keydown.enter)="consultar()"   matInput >
+    
+                    <mat-error *ngIf="input('dni').errors">
+                        Ingrese 8 o 11 digitos
+                </mat-error>
+                 </mat-form-field>
+                <button [disabled]="loadingConsult" type="button" mat-icon-button class="mt-2" (click)="consultar()">
+                    <mat-icon >search</mat-icon>
+                
+                </button>  
+            </div>
+
+       
+
+        </div>
+
+        <div class="col-md-4">
+            <mat-form-field class="w-100 ">
+                <mat-label>Nombre/Razon Social</mat-label>
+                <input class="text-capitalize" formControlName="razonSocial"  matInput>
+                <mat-error *ngIf="input('razonSocial').errors">
+                    Razon social requerido
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field class="w-100">
+                <mat-label>Area de Destino</mat-label>
+                <mat-select formControlName="destinoId"  >
+                  <mat-option *ngFor="let area of areas" [value]="area.id" >{{area.nombre}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="input('destinoId').errors">
+                    Seleccione un area de destino
+                </mat-error>
+              </mat-form-field>
+           </div>
+  
+    </div>
+
+    <div class="row mt-3">
+
+   
+        <div class="col-md-5">
+            <mat-form-field class="w-100">
+                <mat-label>Asunto</mat-label>
+                <textarea formControlName="asunto" rows="3" matInput ></textarea>
+        </mat-form-field>
+       </div>
+        
+   
+
+    </div>
+
+
+   
+   
+
+
+    <div class="buttons-form d-flex justify-content-end mt-5">
+
+ 
+
+        <button  [disabled]="loading" mat-raised-button color="primary" type="submit" >
+            <span>Guardar</span>
+           
+        </button>
+
+        <button (click)="cancelar()" type="button" mat-raised-button color="warn" class="ml-2">Cancelar</button>
+    </div>
+
+    
+
+</form>

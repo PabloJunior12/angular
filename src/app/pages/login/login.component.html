@@ -1,0 +1,20 @@
+<div class="content">
+
+
+    <div class="login-container">
+        <form [formGroup]="form" (ngSubmit)="save()" class="login-form">
+          <h2>Login</h2>
+          <label for="username">Usuario:</label>
+          <select class="form-control" formControlName="area">
+
+            <option [value]="item.nombre" *ngFor="let item of data">{{ item.nombre }}</option>
+
+          </select>
+          <label for="password">Contraseña:</label>
+          <input class="form-control" type="password" id="password" formControlName="password" required>
+
+          <button type="submit">Iniciar sesión</button>
+        </form>
+      </div>
+
+</div>
